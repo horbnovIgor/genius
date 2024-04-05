@@ -1,0 +1,88 @@
+// slider slider
+.slick-slider
+  position: relative
+  width: auto
+  height: 100%
+  display: block
+  cursor: grab
+  &.slick-vertical
+    .slick-track
+      flex-direction: column
+  img
+    display: block
+    width: 100%
+  .slick-track
+    display: flex
+  .slick-list
+    overflow: hidden
+  .slick-slide
+    display: inline-block
+    height: 100%
+    z-index: 2!important
+    margin: 0
+    min-height: 1px
+    &.slick-current
+      z-index: 3!important
+  // navigation
+  .slick-arrow
+    position: absolute
+    width: 2.75rem
+    height: 2.75rem
+    cursor: pointer
+    z-index: 4
+    top: 50%
+    background-color: $colorWhite
+    display: flex
+    justify-content: center
+    align-items: center
+    @include transform-y
+    @include transition
+    &.slick-prev
+      left: 1.5rem
+      right: auto
+      &:hover
+        left: 1rem
+    &.slick-next
+      left: auto
+      right: 1.5rem
+      &:hover
+        right: 1rem
+    &.slick-disabled
+      opacity: .8
+      pointer-events: none
+  // pagination
+  .slick-dots
+    display: flex
+    justify-content: center
+    margin: 0
+    list-style: none
+    position: absolute
+    z-index: 3
+    bottom: 0
+    left: 0
+    padding: 1rem
+    width: 100%
+    li
+      margin: 0
+      @include transition
+      &:not(:last-child)
+        margin-right: .25rem
+
+      &.slick-active,
+      &:hover
+        button
+          background-color: $colorWhite
+
+      &:only-child
+        display: none
+    button
+      text-indent: -9999px
+      width: .5rem
+      height: .5rem
+      border-radius: 50%
+      background-color: $colorPrimary400
+      @include transition
+
+.slick-loading .slick-slide
+  visibility: hidden
+

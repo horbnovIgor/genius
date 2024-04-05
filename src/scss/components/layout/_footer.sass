@@ -1,0 +1,157 @@
+//FOOTER
+.layout__footer
+  color: $colorWhite
+  background-color: $colorPrimary400
+  padding: 1rem
+  border-radius: 1.5rem
+  margin-bottom: 2rem
+  @include mediaMinWidthTabletPort
+    grid-gap: 1.5rem
+    margin-bottom: 0
+    display: grid
+    grid-template-columns: auto 17.5fr
+  @include mediaMinWidthDesktop
+    grid-template-columns: auto 23rem
+    padding: 2rem
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    color: $colorWhite
+.footer__layout
+  display: grid
+  grid-template-columns: 1fr
+  grid-gap: 1.5rem
+  @include mediaMinWidthTabletPort
+    grid-gap: 2rem
+  @include mediaMinWidthDesktop
+    grid-template-columns: 1fr 1fr
+    grid-gap: 1.5rem 1rem
+// footer logo
+.footer__logo
+  @include mediaMinWidthTabletPort
+    grid-column: span 2
+  .logo__link
+    width: 7rem
+    height: 2.5rem
+    display: flex
+    align-items: flex-start
+  img,
+  svg
+    height: 100%
+    width: auto
+// footer navigation
+.footer__navigation
+  .navigation__list
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 1.125rem .75rem
+  .navigation__item
+    &.navigation__item_active,
+    &:hover
+      .navigation__link
+        color: $colorSecondary400
+  .navigation__link
+    color: $colorWhite
+    font-size: .875rem
+    line-height: 1rem
+    @include transition
+// footer__contact
+.footer__contact
+  display: grid
+  grid-template-columns: 1fr
+  grid-gap: 1.25rem
+  .wysiwyg
+    a
+      color: $colorWhite
+      &:hover
+        color: $colorSecondary400
+      &:before
+        display: none
+// footer__socials
+.footer__socials
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-gap: .5rem
+  @include mediaMinWidthTabletPort
+    grid-template-columns: 1fr
+    grid-gap: 1.5rem
+  .socials__list
+    display: grid
+    grid-template-columns: repeat(3,2rem)
+    grid-gap: 1rem
+    &.socials__list_secondary
+      grid-template-columns: repeat(2,5.25rem 2.75rem)
+      .socials__link
+        width: auto
+        height: 1.75rem
+  .socials__item
+    &:hover
+      img,
+      svg
+        fill: $colorSecondary300
+  .socials__link
+    width: 2rem
+    height: 2rem
+    display: flex
+    align-items: flex-start
+  img,
+  svg
+    width: 100%
+    height: 100%
+    fill: $colorWhite
+    @include transition
+// footer__routs
+.footer__routs
+  display: flex
+  align-items: flex-end
+  @include mediaMinWidthTabletPort
+    grid-row: span 9
+  .routs__list
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: .5rem
+    @include mediaMinWidthTabletPort
+      grid-template-columns: 1fr 1fr
+      grid-gap: 1rem
+  .routs__item
+    &.routs__item_secondary
+      @include mediaMinWidthTabletPort
+        grid-column: span 2
+    &.routs__item_active,
+    &:hover
+      .routs__link
+        color: $colorSecondary400
+  .routs__link
+    color: $colorPrimary200
+    font-size: .75rem
+    line-height: 1rem
+    @include transition
+// footer__design
+.footer__design
+  display: flex
+  align-items: flex-end
+  @include mediaMinWidthTabletPort
+    grid-row: span 9
+  .design__link
+    width: 5rem
+    height: 2.5rem
+    display: flex
+    align-items: flex-start
+    &:hover
+      img,
+      svg
+        fill: $colorSecondary500
+  img,
+  svg
+    height: 100%
+    width: auto
+    fill: $colorPrimary200
+    @include transition
+
+// footer__formualt
+.footer__formualt
+  display: grid
+  grid-gap: 1.5rem

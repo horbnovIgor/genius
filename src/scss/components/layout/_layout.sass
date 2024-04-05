@@ -1,0 +1,26 @@
+// LAYOUT
+.layout
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  padding: 1rem
+  overflow: hidden
+  overflow-y: auto
+  visibility: hidden
+  opacity: 0
+  @include transition
+  @include mediaMinWidthTabletPort
+    padding: 1.5rem
+  &.layout_ready-load
+    visibility: visible
+    opacity: 1
+  .layout__main
+    flex-grow: 1
+    padding: 1rem 0
+    @include mediaMinWidthTabletPort
+      padding: 1.5rem 0
+  .container
+    position: relative
+    overflow: hidden
+   
+    

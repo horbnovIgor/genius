@@ -1,0 +1,31 @@
+{
+  "name": "developer",
+  "version": "1.0.0",
+  "description": "developer",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "@dotlottie/player-component": "^2.7.12",
+    "@fancyapps/fancybox": "^3.5.7",
+    "font-awesome": "^4.7.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject-partials": "^1.0.5",
+    "gulp-minify": "^3.1.0",
+    "jcf": "^1.2.3",
+    "jquery-ui": "^1.13.2",
+    "jquery-validation": "^1.19.5",
+    "jquery.maskedinput": "^1.4.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.52.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "developer",
+  "license": "ISC"
+}

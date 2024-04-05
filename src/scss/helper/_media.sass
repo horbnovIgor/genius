@@ -1,0 +1,96 @@
+$mediaMinWidthFullHdDesktop: 1700px
+$mediaMaxWidthFullHdDesktop: 1699px
+
+$mediaMinWidthHdDesktop: 1520px
+$mediaMaxWidthHdDesktop: 1519px
+
+$mediaMinWidthBigDesktop: 1400px
+$mediaMaxWidthBigDesktop: 1399px
+
+$mediaMinWidthDesktop: 1280px
+$mediaMaxWidthDesktop: 1279px
+
+$mediaMinWidthTabletLand: 1024px
+$mediaMaxWidthTabletLand: 1023px
+
+$mediaMinWidthTablet: 992px
+$mediaMaxWidthTablet: 991px
+
+$mediaMinWidthTabletPort: 768px
+$mediaMaxWidthTabletPort: 767px
+
+$mediaMinWidthMobile: 580px
+$mediaMaxWidthMobile: 579px
+
+
+
+
+
+/*mediaWidthFullHdDesktop-1700*/
+@mixin mediaMinWidthFullHdDesktop
+  @media (min-width: #{$mediaMinWidthFullHdDesktop})
+    @content
+@mixin mediaMaxWidthFullHdDesktop
+  @media (max-width: #{$mediaMaxWidthFullHdDesktop})
+    @content
+/*mediaWidthHdDesktop-1520*/
+
+@mixin mediaMinWidthHdDesktop
+  @media (min-width: #{$mediaMinWidthHdDesktop})
+    @content
+@mixin mediaMaxWidthHdDesktop
+  @media (max-width: #{$mediaMaxWidthHdDesktop})
+    @content
+
+/*mediaWidthBigDesktop-1400*/
+@mixin mediaMinWidthBigDesktop
+  @media (min-width: #{$mediaMinWidthBigDesktop})
+    @content
+@mixin mediaMaxWidthBigDesktop
+  @media (max-width: #{$mediaMaxWidthBigDesktop})
+    @content
+
+/*mediaWidthDesktop -1200*/
+@mixin mediaMinWidthDesktop
+  @media (min-width: #{$mediaMinWidthDesktop})
+    @content
+@mixin mediaMaxWidthDesktop
+  @media (max-width: #{$mediaMaxWidthDesktop})
+    @content
+
+/*WidthTabletLand-1024*/
+@mixin mediaMinWidthTabletLand
+  @media screen and (min-width: #{$mediaMinWidthTabletLand})
+    @content
+
+@mixin mediaMaxWidthTabletLand
+  @media screen and (max-width: #{$mediaMaxWidthTabletLand})
+    @content
+
+/*WidthTabletLand-992*/
+@mixin mediaMinWidthTablet
+  @media screen and (min-width: #{$mediaMinWidthTablet})
+    @content
+
+@mixin mediaMaxWidthTablet
+  @media screen and (max-width: #{$mediaMaxWidthTablet})
+    @content
+
+/*WidthTabletLand-768*/
+@mixin mediaMinWidthTabletPort
+  @media screen and (min-width: #{$mediaMinWidthTabletPort})
+    @content
+
+@mixin mediaMaxWidthTabletPort
+  @media screen and (max-width: #{$mediaMaxWidthTabletPort})
+    @content
+
+/*WidthTabletLand-580*/
+@mixin mediaMinWidthMobile
+  @media screen and (min-width: #{$mediaMinWidthMobile})
+    @content
+
+@mixin mediaMaxWidthMobile
+  @media screen and (max-width: #{$mediaMaxWidthMobile})
+    @content
+

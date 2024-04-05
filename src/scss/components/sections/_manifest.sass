@@ -1,0 +1,28 @@
+// MANIFEST
+.layout__manifesto
+  display: grid
+  grid-template-columns: 1fr
+  grid-gap: 1rem
+  @include mediaMinWidthTabletPort
+    grid-template-columns: auto 44.5rem
+  .manifesto__list
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 1.5rem
+  .manifesto__item
+    color: $colorPrimary300
+    font-size: 1.25rem
+    line-height: 1.25rem
+    @include mediaMinWidthMobile
+      font-size: 1.5rem
+      line-height: 1.5rem
+    @include mediaMinWidthTabletPort
+      font-size: 2rem
+      line-height: 2rem
+
+
+
+
+
+
+

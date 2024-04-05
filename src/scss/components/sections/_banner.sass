@@ -1,0 +1,76 @@
+// BANNER
+.layout__banner
+  position: relative
+  padding: .5rem 0 2rem
+  @include mediaMinWidthMobile
+    padding: .5rem 0 1rem
+  @include mediaMinWidthTabletPort
+    padding: .5rem 0 1.5rem
+
+
+  .banner__media
+    border-radius: 1.5rem
+    overflow: hidden
+    display: flex
+    align-items: flex-start
+    height: 21.5rem
+    @include mediaMinWidthMobile
+      height: 15.5rem
+    @include mediaMinWidthTabletPort
+      height: 26.5rem
+    img,
+    svg
+      width: 100%
+      height: 100%
+    video
+      height: auto
+      width: 100%
+      @include mediaMinWidthMobile
+        height: 15.5rem
+        width: auto
+      @include mediaMinWidthTabletPort
+        height: 26.5rem
+      
+
+  .banner__scroll
+    position: absolute
+    bottom: 1.25rem
+    left: 50%
+    width: 7.75rem
+    height: 5rem
+    background: url(../img/content/banner/banner__scroll.png) 50% 50% no-repeat
+    background-size: cover
+    cursor: pointer
+    @include transform-x
+
+    .scroll__link
+      display: flex
+      height: 100%
+      width: 100%
+  .banner__cookie
+    position: absolute
+    width: 32.5rem
+    top: 1.75rem
+    max-width: calc(100% - 1.5rem)
+    right: .75rem
+    padding: .75rem
+    border-radius: 1rem
+    background-color: $colorWhite
+    display: flex
+    flex-direction: column
+    gap: .5rem
+    @include mediaMinWidthTabletPort
+      flex-direction: row
+      align-items: center
+      bottom: 2.25rem
+      gap: 1rem
+      bottom: 1.75rem
+      top: auto
+    .cookie__main
+      font-size: .625rem
+      line-height: .875rem
+    .cookie__footer
+      font-size: .875rem
+      line-height: 1rem
+
+    

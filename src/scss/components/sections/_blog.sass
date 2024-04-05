@@ -1,0 +1,84 @@
+// BLOG
+.layout__blog
+  .blog__list
+    display: flex
+    overflow: hidden
+    overflow-x: auto
+    gap: 1rem
+    @include mediaMinWidthTabletPort
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+  .blog__item
+    width: 16.25rem
+    flex-shrink: 0
+    @include mediaMinWidthTabletPort
+      width: auto
+  .blog__link
+    color: $colorPrimary300
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 1rem
+    position: relative
+    &:hover
+      .blog__media
+        img,
+        svg
+          transform: scale(1.1)
+  .blog__date
+    font-size: .75rem
+    line-height: 1rem
+    padding: .375rem .625rem
+    border-radius: 2rem
+    background-color: $colorWhite
+    position: absolute
+    top: .5rem
+    left: .5rem
+    z-index: 2
+
+    
+  .blog__media
+    height: 10rem
+    border-radius: 1.5rem
+    overflow: hidden
+    @include mediaMinWidthMobile
+      height: 9.25rem
+    @include mediaMinWidthTabletPort
+      height: 15rem
+    img,
+    svg
+      width: 100%
+      height: 100%
+      transform: scale(1)
+      @include transition
+  .blog__layout
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 1rem
+  .blog__header,
+  .blog__main
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    overflow: hidden
+  .blog__header
+    min-height: 2.25rem
+    grid-column: span 2
+    -webkit-line-clamp: 2
+    @include transition
+    @include mediaMinWidthMobile
+      min-height: 2.5rem
+    @include mediaMinWidthTabletPort
+      min-height: 3rem
+  .blog__main
+    font-size: .875rem
+    line-height: 1rem
+    min-height: 3rem
+    grid-column: span 3
+    -webkit-line-clamp: 3
+    @include mediaMinWidthMobile
+      font-size: .875rem
+      line-height: 1rem
+      height: 3rem
+    @include mediaMinWidthTabletPort
+      font-size: 1rem
+      line-height: 1.25rem
+      min-height: 3.75rem

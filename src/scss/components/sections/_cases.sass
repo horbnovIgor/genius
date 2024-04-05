@@ -1,0 +1,73 @@
+// CASES
+.layout__cases
+  .cases__list
+    display: grid
+    grid-template-columns: repeat(1, 1fr)
+    grid-gap: 1rem
+    @include mediaMinWidthMobile
+      grid-template-columns: repeat(3, 1fr)
+      grid-gap: 1.5rem 1rem
+
+  .cases__item
+    @include mediaMinWidthMobile
+      &:nth-child(4n + 1),
+      &:nth-child(4n + 4)
+        grid-column: span 2
+  .cases__link
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: .5rem
+    &:hover
+      .cases__media
+        img,
+        svg
+          transform: scale(1.1)
+  .cases__media
+    width: 100%
+    border-radius: 1rem
+    height: 18.5rem
+    overflow: hidden
+    @include mediaMinWidthMobile
+      height: 15rem
+    @include mediaMinWidthTabletPort
+      height: 25rem
+    img,
+    svg
+      width: 100%
+      height: 100%
+      transform: scale(1)
+      @include transition
+  .cases__main
+    display: flex
+    gap: .5rem
+    align-items: center
+  .cases__ico
+    width: .5rem
+    height: .5rem
+  .cases__title
+    color: $colorPrimary400
+    font-size: 1.125rem
+    line-height: 1.5rem
+    @include mediaMinWidthMobile
+      font-size: 1.25rem
+      line-height: 1.5rem
+    @include mediaMinWidthTabletPort
+      font-size: 1.5rem
+      line-height: 1.5rem
+  .cases__date
+    color: $colorPrimary200
+    font-size: .625rem
+    line-height: .625rem
+    @include mediaMinWidthTabletPort
+      font-size: .75rem
+      line-height: 1rem
+      margin-top: auto
+
+
+
+
+
+
+
+
+

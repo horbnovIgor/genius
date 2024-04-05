@@ -1,0 +1,95 @@
+// DEPARTMENTS
+
+.layout__departments
+  .departments__list
+    display: grid
+    grid-template-columns: 1fr
+  .departments__item
+    color: $colorPrimary400
+    padding: 1.25rem 1.25rem
+    grid-gap: .5rem
+    height: 12rem
+    display: grid
+    position: relative
+    grid-template-columns: 2.5rem auto
+    @include transition
+    @include mediaMinWidthTabletPort
+      padding: 2rem .25rem 1rem
+      align-items: center
+      height: 9rem
+      grid-template-columns: 5.5rem auto 25rem
+    &:not(:last-child)
+      border-bottom: 1px solid $colorPrimary200
+    &:before
+      content: ""
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 100%
+      height: 100%
+      z-index: -1
+      background-color: $colorPrimary500
+      
+      opacity: 0
+      visibility: hidden
+      @include transform
+      @include transition
+      @include mediaMinWidthTabletPort
+        background: url(../img/content/departments/departments__img01.png) 50% 50% no-repeat
+        background-size: contain
+        height: 9rem
+    &:hover
+      color: $colorWhite
+      &:before
+        opacity: 1
+        visibility: visible
+      .departments__header
+        h1,
+        h2,
+        h3,
+        h4
+          color: $colorWhite
+      .departments__media
+        opacity: 1
+        visibility: visible
+  .departments__media,
+  .departments__header,
+  .departments__main
+    position: relative
+    z-index: 2
+  .departments__media
+    @include mediaMinWidthTabletPort
+      opacity: 0
+      visibility: hidden
+      @include transition
+    img,
+    svg
+      width: auto
+      height: 2rem
+      @include mediaMinWidthTabletPort
+        height: 4rem
+  .departments__header
+    font-size: 2.75rem
+    line-height: 2.75rem
+    @include mediaMinWidthTabletPort
+      font-size: 5rem
+      line-height: 5rem
+    h1,
+    h2,
+    h3,
+    h4
+      color: $colorPrimary400
+      @include transition
+  .departments__main
+    font-size: .875rem
+    line-height: 1.25rem
+    grid-column: span 2
+    @include mediaMinWidthTabletPort
+      font-size: 1rem
+      line-height: 1.25rem
+      grid-column: span 1
+
+
+
+
+

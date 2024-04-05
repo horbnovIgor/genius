@@ -1,0 +1,112 @@
+
+  
+  // Стилизация елементов формы
+.formular__form
+  display: grid
+  grid-template-columns: 1fr
+  grid-gap: 1.25rem
+  @include mediaMinWidthTabletPort
+    grid-gap: 2.5rem
+.formular__group
+  display: grid
+  grid-template-columns: 1fr
+  grid-gap: 1.25rem
+.form__field
+  position: relative
+.field__input
+  color: $colorWhite
+  font-size: 1.25rem
+  line-height: 1.75rem
+  font-weight: 500
+  padding: 1rem .5rem .75rem
+  border: 1px solid $colorPrimary500
+  background-color: $colorPrimary500
+  width: 100%
+  border-radius: .5rem
+  font-family: $mainFont
+  box-sizing: border-box
+  appearance: none
+  outline: none
+  @include transition
+
+
+
+
+
+
+  &:hover
+    border-color: $colorPrimary300
+  &.error
+    border-color: $colorSecondary400
+  // Позиционирование заголовков
+  &:invalid
+    & ~ .field__title
+      font-size: 1rem
+      line-height: 1.5rem
+      top: 1rem
+      left: .5rem
+      @include mediaMinWidthMobile
+        font-size: 1.125rem
+        line-height: 1.5rem
+      @include mediaMinWidthTabletPort
+        font-size: 1.25rem
+        line-height: 1.5rem
+textarea
+  width: 100%
+  height: 12rem
+  resize: none
+
+.field__label
+  display: flex
+  align-items: flex-start
+  height: 100%
+  &:hover
+    .field__input
+      border-color: $colorPrimary400
+
+.field__title
+  color: $colorPrimary200
+  display: block
+  font-size: 0.625rem
+  line-height: 1rem
+  font-weight: 400
+  top: 0.25rem
+  cursor: pointer
+  position: absolute
+  left: .5rem
+  @include transition
+
+// ошибка
+label.error,
+.wpcf7-not-valid-tip
+  color: $colorSecondary400
+  font-size: 0.75rem
+  line-height: 1rem
+  position: absolute
+  top: calc(100% + 0.25rem)
+  left: 0
+
+  position: absolute
+  top: calc(100% + 0.125rem)
+  left: -1px
+  z-index: 3
+
+
+// placeholder
+input::placeholder,
+textarea::placeholder
+  opacity: 1
+  color: $colorWhite
+
+// scrollbar
+::-webkit-scrollbar
+  width: 0
+
+::-webkit-scrollbar-track
+  background: transparent
+
+::-webkit-scrollbar-thumb
+  background-color: transparent
+
+  &:hover
+    background-color: transparent
