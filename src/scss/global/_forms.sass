@@ -10,15 +10,17 @@
 .formular__group
   display: grid
   grid-template-columns: 1fr
-  grid-gap: 1.25rem
+  grid-gap: 1rem
+  @include mediaMinWidthTabletPort
+    grid-gap: 1.25rem
 .form__field
   position: relative
 .field__input
   color: $colorWhite
   font-size: 1.25rem
-  line-height: 1.75rem
+  line-height: 1.25rem
   font-weight: 500
-  padding: 1rem .5rem .75rem
+  padding: 0.8rem .5rem .2rem
   border: 1px solid $colorPrimary500
   background-color: $colorPrimary500
   width: 100%
@@ -28,6 +30,10 @@
   appearance: none
   outline: none
   @include transition
+  @include mediaMinWidthTabletPort
+    font-size: 1.25rem
+    line-height: 1.75rem
+    padding: 1rem .5rem .75rem
 
 
 
@@ -43,7 +49,7 @@
     & ~ .field__title
       font-size: 1rem
       line-height: 1.5rem
-      top: 1rem
+      top: .5rem
       left: .5rem
       @include mediaMinWidthMobile
         font-size: 1.125rem
@@ -51,6 +57,7 @@
       @include mediaMinWidthTabletPort
         font-size: 1.25rem
         line-height: 1.5rem
+        top: 1rem
 textarea
   width: 100%
   height: 12rem

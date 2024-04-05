@@ -5,21 +5,28 @@
     display: grid
     grid-template-columns: 1fr
   .departments__item
-    color: $colorPrimary400
+    color: $colorPrimary200
     padding: 1.25rem 1.25rem
     grid-gap: .5rem
-    height: 12rem
+    height: auto
+    min-height: 10rem
     display: grid
     position: relative
-    grid-template-columns: 2.5rem auto
+    grid-template-columns: 1.5rem auto
     @include transition
-    @include mediaMinWidthTabletPort
-      padding: 2rem .25rem 1rem
+    @include mediaMinWidthMobile
+      grid-template-columns: 2rem calc(55% - 1rem) calc(45% - 1rem)
       align-items: center
       height: 9rem
+      min-height: 0
+    @include mediaMinWidthTabletPort
+      padding: 2rem .25rem 1rem
+      height: 12rem
+      align-items: center
       grid-template-columns: 5.5rem auto 25rem
     &:not(:last-child)
-      border-bottom: 1px solid $colorPrimary200
+      @include mediaMinWidthMobile
+        border-bottom: 1px solid $colorPrimary200
     &:before
       content: ""
       position: absolute
@@ -28,16 +35,17 @@
       width: 100%
       height: 100%
       z-index: -1
-      background-color: $colorPrimary500
-      
       opacity: 0
       visibility: hidden
       @include transform
       @include transition
-      @include mediaMinWidthTabletPort
-        background: url(../img/content/departments/departments__img01.png) 50% 50% no-repeat
-        background-size: contain
+      background: url(../img/content/departments/departments__img03.png) 50% 50% no-repeat
+      background-size: 100% 100%
+      @include mediaMinWidthMobile
+        background-image: url(../img/content/departments/departments__img02.png)
         height: 9rem
+      @include mediaMinWidthTabletPort
+        background-image: url(../img/content/departments/departments__img01.png)
     &:hover
       color: $colorWhite
       &:before
@@ -58,6 +66,8 @@
     position: relative
     z-index: 2
   .departments__media
+    display: flex
+    align-items: center
     @include mediaMinWidthTabletPort
       opacity: 0
       visibility: hidden
@@ -84,10 +94,11 @@
     font-size: .875rem
     line-height: 1.25rem
     grid-column: span 2
+    @include mediaMinWidthMobile
+      grid-column: span 1
     @include mediaMinWidthTabletPort
       font-size: 1rem
       line-height: 1.25rem
-      grid-column: span 1
 
 
 

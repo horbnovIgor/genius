@@ -1,21 +1,33 @@
 .layout__header
-  padding: 0 1.5rem 1.5rem
-  border-radius: 1.5rem
+  padding: 0 1rem 1rem
+  border-radius: .875rem
   background-color: $colorPrimary100
   position: relative
   display: grid
   justify-content: center
   grid-template-columns: 1fr
   grid-gap: .75rem
+  @include mediaMinWidthMobile
+    padding: 0 1rem 1.5rem
+    border-radius: .875rem
+  @include mediaMinWidthTabletPort
+    padding: 0 1.5rem 1.5rem
+    border-radius: 1.5rem
   .header__before,
   .header__after
-    width: 4.5rem
-    height: 5rem
+    width: 2.625rem
+    height: 3rem
     background-color: $colorWhite
     display: flex
     align-items: flex-start
     position: absolute
     top: 0
+    @include mediaMinWidthMobile
+      width: 2.75rem
+      height: 3rem
+    @include mediaMinWidthTabletPort
+      width: 4.5rem
+      height: 5rem
   .header__before
     left: 0
   .header__after
@@ -49,12 +61,6 @@
           margin-top: -.125rem
           transform: rotate(-45deg)
 
-    & ~ *
-      opacity: .1
-
-  
-  
-  
   
   // header__logo
 .header__logo
@@ -69,19 +75,25 @@
 
 
   .logo__link
-    width: 13rem
-    height: 5rem
+    width: 7rem
+    height: 2.625rem
     background-color: $colorWhite
     display: flex
     align-items: flex-start
     justify-content: center
     position: relative
+    @include mediaMinWidthMobile
+      height: 3rem
+      width: 9rem
+    @include mediaMinWidthTabletPort
+      height: 5rem
+      width: 13rem
     &::before
       content: ""
       background-color: $colorPrimary100
       position: absolute
       width: 100%
-      height: 1.875rem
+      height: 1rem
       bottom: 0
       left: 50%
       @include transform-x
@@ -89,14 +101,22 @@
       opacity: 1
       visibility: visible
       @include transition
+      @include mediaMinWidthMobile
+        height: 1.125rem
+      @include mediaMinWidthTabletPort
+        height: 1.875rem
+
+
   .logo__img
-    height: 2.5rem
+    height: 1.5rem
     width: auto
     position: relative
     z-index: 2
+    @include mediaMinWidthMobile
+      height: 1.5rem
+    @include mediaMinWidthTabletPort
+      height: 2.5rem
   .logo__ico
-    width: 4.5rem
-    height: 5rem
     background-color: $colorWhite
     display: flex
     align-items: flex-start
@@ -105,6 +125,22 @@
     opacity: 1
     visibility: visible
     @include transition
+    width: 2.25rem
+    height: 3rem
+
+    @include mediaMinWidthMobile
+      width: 2.75rem
+      height: 3rem
+    @include mediaMinWidthTabletPort
+      width: 4.5rem
+      height: 5rem
+
+
+
+
+
+
+
     &.logo__ico_before
       left: 0
     &.logo__ico_after
@@ -112,7 +148,7 @@
 // burger
 .header__burger
   display: flex
-  width: 2rem
+  width: 1.5rem
   height: 2rem
   flex-direction: column
   justify-content: center
@@ -122,13 +158,24 @@
   right: 0
   z-index: 10
   @include transition
-  .burger__item
+  @include mediaMinWidthMobile
+    width: 1.5rem
+  @include mediaMinWidthTabletPort
     width: 2rem
+
+
+
+  .burger__item
+    width: 1.5rem
     background-color: $colorPrimary400
     height: .125rem
     @include transition
     &:not(:last-child)
       margin-bottom: .375rem
+    @include mediaMinWidthMobile
+      width: 1.5rem
+    @include mediaMinWidthTabletPort
+      width: 2rem
 
   
 // header__menu
@@ -200,35 +247,6 @@
     visibility: hidden
     @include transition
 
-// header__languages
-.header__languages
-  position: absolute
-  top: 0
-  left: 0
-  padding: .75rem 0
-  display: flex
-  justify-content: flex-start
-
-  .languages__list
-    display: grid
-    grid-template-columns: auto auto auto
-    grid-gap: .5rem
-    &:hover
-      .languages__item
-        &:not(:first-child)
-          display: block
-  .languages__item
-    cursor: pointer
-    &.languages__item_active
-      order: -1
-      .languages__text
-        color: $colorSecondary400
-    &:not(:first-child)
-      display: none
-  .languages__link
-    color: $colorPrimary400
-    font-size: .75rem
-    line-height: 1rem
     display: block
     @include transition
 
@@ -237,11 +255,17 @@
   position: absolute
   top: 0
   left: 0
-  padding: .75rem 0
+  z-index: 4
+  padding: .25rem 0
+  @include mediaMinWidthMobile
+    padding: .75rem 0
   .date__text
     color: $colorPrimary400
-    font-size: .75rem
+    font-size: .5rem
     line-height: 1rem
+    @include mediaMinWidthMobile
+      font-size: .75rem
+      line-height: 1rem
 
 
 // header__slogan
@@ -250,6 +274,8 @@
   grid-template-columns: 1fr
   text-align: center
   grid-gap: 1rem
+  position: relative
+  z-index: 2
   @include mediaMinWidthMobile
     grid-template-columns: calc(50% + 2rem) calc(50% - 2rem)
     align-items: center

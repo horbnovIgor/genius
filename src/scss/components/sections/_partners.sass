@@ -2,13 +2,18 @@
 .layout__partners
   display: grid
   grid-template-columns: 1fr
-  grid-gap: 3rem
+  grid-gap: 1.5rem
+  @include mediaMinWidthMobile
+    grid-gap: 3rem
   .partners__item
     flex-shrink: 0
   .partners__list
-    display: flex
-    gap: 2rem
-    animation: scroll 0s linear infinite
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 1rem
+    @include mediaMinWidthTabletPort
+      gap: 2rem
+      display: flex
     &.partners__list_secondary
       @include mediaMinWidthTabletPort
         animation-name: scrollRevert
@@ -28,6 +33,7 @@
     width: auto
     filter: grayscale(1)
     opacity: .5
+    object-fit: contain
     @include transition
 
 @keyframes scroll

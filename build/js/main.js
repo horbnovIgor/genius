@@ -4,20 +4,6 @@
   var header = $(".header"),
     layout = $(".layout");
   // preloader
-  preloader();
-  function preloader() {
-    layout.on("click", ".nav__link", function (event) {
-      layout.removeClass("layout_ready-load");
-      event.preventDefault();
-      var linkLocation = this.href;
-      setTimeout(function () {
-        window.location = linkLocation;
-      }, 500);
-    });
-    setTimeout(function () {
-      layout.addClass("layout_ready-load");
-    }, 0);
-  }
 
   if ($(".departments__list").length) {
     $(".departments__list").slick({
@@ -44,8 +30,25 @@
   // Menu
   navInit();
   function navInit() {
-    header.find(".burger").on("click", function () {
+    header.find(".burger, .nav__link").on("click", function () {
       $(this).closest(header).toggleClass("header_menu-active");
+    });
+
+    // modal hide
+    $(document).mouseup(function (e) {
+      if ($(".header_menu-active").length) {
+        var div = $(".header");
+        if (!div.is(e.target) && div.has(e.target).length === 0) {
+          header.removeClass("header_menu-active");
+        }
+      }
+    });
+
+    // modal hide
+    $(window).keydown(function (e) {
+      if (e.key === "Escape") {
+        header.removeClass("header_menu-active");
+      }
     });
   }
 
@@ -97,16 +100,17 @@
   function partnersCarousel() {
     let w = $(window).width();
     $(".partners__list").each(function () {
-      let content = $(this).html();
-
-      if ($(this).find(".partners__item").length < 100) {
-        $(this).html($(this).html() + content);
-        partnersCarousel();
-      } else {
-        $(this).css(
-          "animation-duration",
-          $(this).find(".partners__item").length / 2 + "s"
-        );
+      if ($(window).width() > 768) {
+        let content = $(this).html();
+        if ($(this).find(".partners__item").length < 100) {
+          $(this).html($(this).html() + content);
+          partnersCarousel();
+        } else {
+          $(this).css(
+            "animation-duration",
+            $(this).find(".partners__item").length / 2 + "s"
+          );
+        }
       }
     });
   }

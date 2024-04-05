@@ -9,7 +9,8 @@
   @include mediaMinWidthDesktop
     padding: 1.5rem 0
   &.layout__section_secondary
-    padding: 4.5rem 0
+    @include mediaMinWidthMobile
+      padding: 4.5rem 0
   .section__header
     &.section__header_secondary
       display: grid
@@ -27,11 +28,14 @@
       z-index: 2
       transform: translate(-50%, 0)
       background: url(../img/title__bg.png) 50% 50% no-repeat
-      height: 4rem
+      height: 2.5rem
       background-size: auto 100%
       width: 100%
+      @include mediaMinWidthMobile
+        height: 2.75rem
       @include mediaMinWidthTabletPort
         top: 1rem
+        height: 4rem
 
 
 
@@ -44,11 +48,12 @@
   .title__ico
     width: .3125rem
     height: 1rem
+    transform: translateY(1px)
   .title__text
     font-size: 1rem
+    @include mediaMinWidthMobile
+      font-size: 1.125rem
     @include mediaMinWidthTabletPort
-      font-size: 1.25rem
-    @include mediaMinWidthDesktop
       font-size: 1.25rem
   .section__subtitle
     h1,

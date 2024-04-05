@@ -1,7 +1,7 @@
 // BANNER
 .layout__banner
   position: relative
-  padding: .5rem 0 2rem
+  padding: .5rem 0 0
   @include mediaMinWidthMobile
     padding: .5rem 0 1rem
   @include mediaMinWidthTabletPort
@@ -9,22 +9,24 @@
 
 
   .banner__media
-    border-radius: 1.5rem
+    border-radius: .875rem
     overflow: hidden
     display: flex
     align-items: flex-start
     height: 21.5rem
     @include mediaMinWidthMobile
       height: 15.5rem
+      border-radius: .875rem
     @include mediaMinWidthTabletPort
       height: 26.5rem
+      border-radius: 1.5rem
     img,
     svg
       width: 100%
       height: 100%
     video
-      height: auto
-      width: 100%
+      height: 100%
+      width: auto
       @include mediaMinWidthMobile
         height: 15.5rem
         width: auto
@@ -34,43 +36,57 @@
 
   .banner__scroll
     position: absolute
-    bottom: 1.25rem
+    bottom: 0
     left: 50%
-    width: 7.75rem
-    height: 5rem
+    width: 5rem
+    height: 3rem
     background: url(../img/content/banner/banner__scroll.png) 50% 50% no-repeat
     background-size: cover
     cursor: pointer
     @include transform-x
-
+    @include mediaMinWidthMobile
+      bottom: 1.75rem
+    @include mediaMinWidthTabletPort
+      width: 7.75rem
+      height: 5rem
+      bottom: 1.25rem
     .scroll__link
       display: flex
       height: 100%
       width: 100%
   .banner__cookie
     position: absolute
-    width: 32.5rem
-    top: 1.75rem
+    width: 100%
     max-width: calc(100% - 1.5rem)
+    bottom: .75rem
     right: .75rem
     padding: .75rem
-    border-radius: 1rem
+    border-radius: .875rem
+    border: 1px solid $colorPrimary200
     background-color: $colorWhite
     display: flex
     flex-direction: column
     gap: .5rem
+    @include mediaMinWidthMobile
+      width: 20rem
+      bottom: 2.75rem
     @include mediaMinWidthTabletPort
       flex-direction: row
       align-items: center
       bottom: 2.25rem
+      width: 32.5rem
       gap: 1rem
       bottom: 1.75rem
+      border-radius: 1rem
       top: auto
     .cookie__main
       font-size: .625rem
       line-height: .875rem
     .cookie__footer
-      font-size: .875rem
+      font-size: .75rem
       line-height: 1rem
+      @include mediaMinWidthTabletPort
+        font-size: .875rem
+        line-height: 1rem
 
     

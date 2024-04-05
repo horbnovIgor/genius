@@ -36,18 +36,22 @@
       align-items: flex-start
       z-index: 3
       @include transform
-      @include mediaMinWidthTabletPort
+      @include mediaMinWidthMobile
         top: auto
+        bottom: 1rem
+        left: 1rem
+        transform: none
+      @include mediaMinWidthTabletPort
+       
         bottom: 12rem
         left: 20rem
-        transform: none
+        
   .about__layout
     font-size: 1rem
     line-height: 1rem
     padding: 1rem
     border-radius: 1rem
     display: grid
-    max-width: 33.25rem
     letter-spacing: -.06rem
     grid-template-columns: 1fr
     background-color: $colorPrimary100
@@ -55,18 +59,21 @@
     @include mediaMinWidthMobile
       font-size: 1.25rem
       line-height: 1.25rem
-      grid-template-columns: 25rem auto
+      grid-template-columns: 32rem auto
       align-items: center
     @include mediaMinWidthTabletPort
       align-items: flex-start
       grid-template-columns: 1fr
       font-size: 1.5rem
       line-height: 1.5rem
+      max-width: 33.25rem
       position: absolute
       bottom: 1.5rem
       right: 1.5rem
       grid-gap: 1rem
       grid-auto-columns: 1fr
+    .btn
+      width: 100%
 
 
 

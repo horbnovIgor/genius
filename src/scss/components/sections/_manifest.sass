@@ -3,6 +3,8 @@
   display: grid
   grid-template-columns: 1fr
   grid-gap: 1rem
+  @include mediaMinWidthMobile
+    grid-template-columns: 16.5rem auto
   @include mediaMinWidthTabletPort
     grid-template-columns: auto 44.5rem
   .manifesto__list

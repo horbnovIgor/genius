@@ -49,7 +49,11 @@
 
         <main class="layout__main">
           <!-- MANIFESTO -->
-          <div id="manifesto" class="layout__section section">
+          <div
+            id="layout__manifesto"
+            id="manifesto"
+            class="layout__section section"
+          >
             <div class="section__main">
               <div class="layout__manifesto manifesto">
                 <div class="manifesto__header">
@@ -95,7 +99,7 @@
           </div>
 
           <!-- DEPARTMENTS -->
-          <div class="layout__section section">
+          <div id="layout__departments" class="layout__section section">
             <div class="section__header">
               <div class="wysiwyg"></div>
             </div>
@@ -195,7 +199,7 @@
           </div>
 
           <!-- CASES -->
-          <div class="layout__section section">
+          <div id="layout__cases" class="layout__section section">
             <div class="section__header">
               <div class="section__title title content-start">
                 <svg class="title__ico title__ico_left">
@@ -359,7 +363,10 @@
           </div>
 
           <!-- PARTNERS -->
-          <div class="layout__section layout__section_secondary section">
+          <div
+            id="layout__partners"
+            class="layout__section layout__section_secondary section"
+          >
             <div class="section__header">
               <div class="section__title title">
                 <svg class="title__ico title__ico_left">
@@ -382,8 +389,24 @@
                       />
                     </a>
                   </div>
+                  <div class="partners__item">
+                    <a class="partners__link" href="#">
+                      <img
+                        src="img/content/partners/partners__img01.png"
+                        alt="image description"
+                      />
+                    </a>
+                  </div>
                 </div>
                 <div class="partners__list partners__list_secondary">
+                  <div class="partners__item">
+                    <a class="partners__link" href="#">
+                      <img
+                        src="img/content/partners/partners__img01.png"
+                        alt="image description"
+                      />
+                    </a>
+                  </div>
                   <div class="partners__item">
                     <a class="partners__link" href="#">
                       <img
@@ -398,7 +421,7 @@
           </div>
 
           <!-- ABOUT -->
-          <div class="layout__section section">
+          <div id="layout__about" class="layout__section section">
             <div class="section__header section__header_tertiary">
               <div class="section__title title">
                 <svg class="title__ico title__ico_left">
@@ -451,7 +474,7 @@
           </div>
 
           <!-- SERVICES -->
-          <div class="layout__section section">
+          <div id="layout__services" class="layout__section section">
             <div class="section__header section__header_secondary">
               <div class="section__title title">
                 <svg class="title__ico title__ico_left">
@@ -473,72 +496,64 @@
               <div class="layout__services services">
                 <div class="services__list">
                   <div class="services__item">
-                    <a class="services__link" href="#">
-                      <div class="services__media">
-                        <img
-                          src="img/content/services/services__img01.png"
-                          alt="image description"
-                        />
+                    <div class="services__media">
+                      <img
+                        src="img/content/services/services__img01.png"
+                        alt="image description"
+                      />
+                    </div>
+                    <div class="services__main">
+                      <div class="wysiwyg">
+                        <p>Платформа нативной рекламы в Telegram</p>
                       </div>
-                      <div class="services__main">
-                        <div class="wysiwyg">
-                          <p>Платформа нативной рекламы в Telegram</p>
-                        </div>
-                      </div>
-                    </a>
+                    </div>
                   </div>
                   <div class="services__item">
-                    <a class="services__link" href="#">
-                      <div class="services__media">
-                        <img
-                          src="img/content/services/services__img02.png"
-                          alt="image description"
-                        />
+                    <div class="services__media">
+                      <img
+                        src="img/content/services/services__img02.png"
+                        alt="image description"
+                      />
+                    </div>
+                    <div class="services__main">
+                      <div class="wysiwyg">
+                        <p>
+                          Таргетированная реклама и аналитика
+                          для фармацевтической отрасли
+                        </p>
                       </div>
-                      <div class="services__main">
-                        <div class="wysiwyg">
-                          <p>
-                            Таргетированная реклама и аналитика
-                            для фармацевтической отрасли
-                          </p>
-                        </div>
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
                 <div class="services__list">
                   <div class="services__item">
-                    <a class="services__link" href="#">
-                      <div class="services__media">
-                        <img
-                          src="img/content/services/services__img03.png"
-                          alt="image description"
-                        />
+                    <div class="services__media">
+                      <img
+                        src="img/content/services/services__img03.png"
+                        alt="image description"
+                      />
+                    </div>
+                    <div class="services__main">
+                      <div class="wysiwyg">
+                        <p>
+                          Многофункциональная платформа для создания, размещения
+                          и управления рекламой
+                        </p>
                       </div>
-                      <div class="services__main">
-                        <div class="wysiwyg">
-                          <p>
-                            Многофункциональная платформа для создания,
-                            размещения и управления рекламой
-                          </p>
-                        </div>
-                      </div>
-                    </a>
+                    </div>
                   </div>
                   <div class="services__item">
-                    <a class="services__link" href="#">
-                      <div class="services__media">
-                        <img
-                          src="img/content/services/services__img04.png"
-                          alt="image description"
-                        />
+                    <div class="services__media">
+                      <img
+                        src="img/content/services/services__img04.png"
+                        alt="image description"
+                      />
+                    </div>
+                    <div class="services__main">
+                      <div class="wysiwyg">
+                        <p>Технологии цифровых аватаров</p>
                       </div>
-                      <div class="services__main">
-                        <div class="wysiwyg">
-                          <p>Технологии цифровых аватаров</p>
-                        </div>
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -546,7 +561,7 @@
           </div>
 
           <!-- NEWS -->
-          <div class="layout__section section">
+          <div id="layout__news" class="layout__section section">
             <div class="section__header">
               <div class="section__title title">
                 <svg class="title__ico title__ico_left">
@@ -719,7 +734,7 @@
           </div>
 
           <!-- BLOG -->
-          <div class="layout__section section">
+          <div id="layout__blog" class="layout__section section">
             <div class="section__header">
               <div class="section__title title">
                 <svg class="title__ico title__ico_left">

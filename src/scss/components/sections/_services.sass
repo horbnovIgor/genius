@@ -2,15 +2,16 @@
 .layout__services
   display: grid
   grid-template-columns: 1fr
-  grid-gap: 2rem
+  grid-gap: 1rem
   @include mediaMinWidthTabletPort
     grid-gap: 3rem
   .services__list
     display: grid
     grid-template-columns: 1fr
-    grid-gap: 2rem
+    grid-gap: 1rem
     justify-content: start
     @include mediaMinWidthMobile
+      grid-gap: 2rem
       grid-template-columns: repeat(2,1fr)
     @include mediaMinWidthTabletPort
       grid-template-columns: repeat(2,25rem)
@@ -18,7 +19,7 @@
     &:nth-child(even)
       @include mediaMinWidthTabletPort
         justify-content: end
-  .services__link
+  .services__item
     color: $colorPrimary300
     border-radius: .5rem
     padding: 1rem

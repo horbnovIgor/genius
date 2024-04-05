@@ -5,12 +5,14 @@
   padding: 1rem
   border-radius: 1.5rem
   margin-bottom: 2rem
-  @include mediaMinWidthTabletPort
+  align-items: flex-start
+  @include mediaMinWidthMobile
     grid-gap: 1.5rem
+    padding: 1.5rem
     margin-bottom: 0
     display: grid
-    grid-template-columns: auto 17.5fr
-  @include mediaMinWidthDesktop
+    grid-template-columns: 24rem 17.5rem
+  @include mediaMinWidthTabletPort
     grid-template-columns: auto 23rem
     padding: 2rem
   h1,
@@ -24,9 +26,9 @@
   display: grid
   grid-template-columns: 1fr
   grid-gap: 1.5rem
-  @include mediaMinWidthTabletPort
+  @include mediaMinWidthMobile
     grid-gap: 2rem
-  @include mediaMinWidthDesktop
+  @include mediaMinWidthTabletPort
     grid-template-columns: 1fr 1fr
     grid-gap: 1.5rem 1rem
 // footer logo
@@ -47,7 +49,9 @@
   .navigation__list
     display: grid
     grid-template-columns: 1fr 1fr
-    grid-gap: 1.125rem .75rem
+    grid-gap: 1rem .75rem
+    @include mediaMinWidthTabletPort
+      grid-gap: 1.125rem .75rem
   .navigation__item
     &.navigation__item_active,
     &:hover
@@ -55,14 +59,23 @@
         color: $colorSecondary400
   .navigation__link
     color: $colorWhite
-    font-size: .875rem
+    font-size: .75rem
     line-height: 1rem
     @include transition
+    @include mediaMinWidthTabletPort
+      font-size: .875rem
+      line-height: 1rem
 // footer__contact
 .footer__contact
+  font-size: .75rem
+  line-height: 120%
   display: grid
   grid-template-columns: 1fr
   grid-gap: 1.25rem
+  @include mediaMinWidthMobile
+    grid-gap: 2rem
+  @include mediaMinWidthTabletPort
+    font-size: .875rem
   .wysiwyg
     a
       color: $colorWhite
@@ -73,17 +86,20 @@
 // footer__socials
 .footer__socials
   display: grid
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: auto auto
   grid-gap: .5rem
+  justify-content: flex-start
   @include mediaMinWidthTabletPort
     grid-template-columns: 1fr
     grid-gap: 1.5rem
   .socials__list
     display: grid
     grid-template-columns: repeat(3,2rem)
-    grid-gap: 1rem
+    grid-gap: .5rem
+    @include mediaMinWidthTabletPort
+      grid-gap: 1rem
     &.socials__list_secondary
-      grid-template-columns: repeat(2,5.25rem 2.75rem)
+      grid-template-columns:  5.25rem 2.75rem
       .socials__link
         width: auto
         height: 1.75rem
