@@ -4,20 +4,22 @@
   display: grid
   grid-template-columns: 1fr
   grid-gap: .5rem
-  
+  &.layout__about_play
+    .about__video
+      opacity: 1!important
+      visibility: visible!important
 
   .about__media
-    .about__link
-      height: 23rem
-      border-radius: 1.5rem
-      position: relative
-      overflow: hidden
-      background-color: $colorPrimary200
-      display: block
-      @include mediaMinWidthMobile
-        height: 25rem
-      @include mediaMinWidthTabletPort
-        height: 42.5rem
+    height: 23rem
+    border-radius: 1.5rem
+    position: relative
+    overflow: hidden
+    background-color: $colorPrimary200
+    display: block
+    @include mediaMinWidthMobile
+      height: 25rem
+    @include mediaMinWidthTabletPort
+      height: 42.5rem
     img,
     svg
       position: absolute
@@ -25,6 +27,14 @@
       left: 0
       width: 100%
       height: 100%
+    .about__video
+      position: absolute
+      top: 0
+      left: 0
+      width: auto
+      height: 100%
+      opacity: 0
+      visibility: hidden
     .about__init
       position: absolute
       width: 7.5rem
@@ -72,8 +82,11 @@
       right: 1.5rem
       grid-gap: 1rem
       grid-auto-columns: 1fr
+    
     .btn
       width: 100%
+      @include mediaMinWidthTabletPort
+        width: auto
 
 
 

@@ -1570,7 +1570,11 @@ textarea::placeholder {
   grid-template-columns: 1fr;
   grid-gap: 0.5rem;
 }
-.layout__about .about__media .about__link {
+.layout__about.layout__about_play .about__video {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.layout__about .about__media {
   height: 23rem;
   border-radius: 1.5rem;
   position: relative;
@@ -1579,12 +1583,12 @@ textarea::placeholder {
   display: block;
 }
 @media screen and (min-width: 580px) {
-  .layout__about .about__media .about__link {
+  .layout__about .about__media {
     height: 25rem;
   }
 }
 @media screen and (min-width: 769px) {
-  .layout__about .about__media .about__link {
+  .layout__about .about__media {
     height: 42.5rem;
   }
 }
@@ -1595,6 +1599,15 @@ textarea::placeholder {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.layout__about .about__media .about__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
 }
 .layout__about .about__media .about__init {
   position: absolute;
@@ -1668,6 +1681,11 @@ textarea::placeholder {
 .layout__about .about__layout .btn {
   width: 100%;
 }
+@media screen and (min-width: 769px) {
+  .layout__about .about__layout .btn {
+    width: auto;
+  }
+}
 
 .layout__banner {
   position: relative;
@@ -1732,8 +1750,6 @@ textarea::placeholder {
   left: 50%;
   width: 5rem;
   height: 3rem;
-  background: url(../img/content/banner/banner__scroll.png) 50% 50% no-repeat;
-  background-size: cover;
   cursor: pointer;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -1747,7 +1763,7 @@ textarea::placeholder {
   .layout__banner .banner__scroll {
     width: 7.75rem;
     height: 5rem;
-    bottom: 1.25rem;
+    bottom: 1rem;
   }
 }
 .layout__banner .banner__scroll .scroll__link {
@@ -1956,15 +1972,23 @@ textarea::placeholder {
   grid-template-columns: 1fr;
   grid-gap: 0.5rem;
 }
-.layout__cases .cases__link:hover .cases__media img,
-.layout__cases .cases__link:hover .cases__media svg {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+.layout__cases .cases__link:hover .cases__img {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+.layout__cases .cases__link:hover .cases__video {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 .layout__cases .cases__media {
   width: 100%;
   border-radius: 1rem;
   height: 18.5rem;
+  position: relative;
   overflow: hidden;
 }
 @media screen and (min-width: 580px) {
@@ -1977,12 +2001,22 @@ textarea::placeholder {
     height: 25rem;
   }
 }
-.layout__cases .cases__media img,
-.layout__cases .cases__media svg {
+.layout__cases .cases__media .cases__img {
   width: 100%;
   height: 100%;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.layout__cases .cases__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
@@ -2098,20 +2132,20 @@ textarea::placeholder {
     background-image: url(../img/content/departments/departments__img01.png);
   }
 }
-.layout__departments .departments__item:hover {
+.layout__departments .departments__item.departments__item_active {
   color: #ffffff;
 }
-.layout__departments .departments__item:hover:before {
+.layout__departments .departments__item.departments__item_active:before {
   opacity: 1;
   visibility: visible;
 }
-.layout__departments .departments__item:hover .departments__header h1,
-.layout__departments .departments__item:hover .departments__header h2,
-.layout__departments .departments__item:hover .departments__header h3,
-.layout__departments .departments__item:hover .departments__header h4 {
+.layout__departments .departments__item.departments__item_active .departments__header h1,
+.layout__departments .departments__item.departments__item_active .departments__header h2,
+.layout__departments .departments__item.departments__item_active .departments__header h3,
+.layout__departments .departments__item.departments__item_active .departments__header h4 {
   color: #ffffff;
 }
-.layout__departments .departments__item:hover .departments__media {
+.layout__departments .departments__item.departments__item_active .departments__media {
   opacity: 1;
   visibility: visible;
 }
@@ -2341,6 +2375,8 @@ textarea::placeholder {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-animation-name: scroll;
+            animation-name: scroll;
   }
 }
 @media screen and (min-width: 769px) {
