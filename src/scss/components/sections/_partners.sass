@@ -14,10 +14,10 @@
     @include mediaMinWidthTabletPort
       gap: 2rem
       display: flex
-      animation-name: scroll
-    &.partners__list_secondary
-      @include mediaMinWidthTabletPort
-        animation-name: scrollRevert
+
+
+
+        
   .partners__item
     &:hover
       img,
@@ -37,18 +37,6 @@
     object-fit: contain
     @include transition
 
-@keyframes scroll
-  from 
-    transform: translateX(-50%)
-  to
-    transform: translateX(-150%)
-
-@keyframes scrollRevert
-
-  from 
-    transform: translateX(-50%)
-  to
-    transform: translateX(50%)
 
 
 

@@ -4,11 +4,6 @@
   display: grid
   grid-template-columns: 1fr
   grid-gap: .5rem
-  &.layout__about_play
-    .about__video
-      opacity: 1!important
-      visibility: visible!important
-
   .about__media
     height: 23rem
     border-radius: 1.5rem
@@ -52,10 +47,27 @@
         left: 1rem
         transform: none
       @include mediaMinWidthTabletPort
-       
         bottom: 12rem
         left: 20rem
-        
+      svg
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 50%
+        left: 50%
+        @include transform
+        @include transition
+        & + svg
+          visibility: hidden
+  &.layout__about_play
+    .about__video
+      opacity: 1!important
+      visibility: visible!important
+    .about__init
+      svg
+        visibility: hidden
+        & + svg
+          visibility: visible
   .about__layout
     font-size: 1rem
     line-height: 1rem
@@ -87,7 +99,9 @@
       width: 100%
       @include mediaMinWidthTabletPort
         width: auto
-
+#layout__about
+  .section__title
+    transform: translateY(.4rem)
 
 
 

@@ -47,41 +47,27 @@
       @include mediaMinWidthTabletPort
         background-image: url(../img/content/departments/departments__img01.png)
     &.departments__item_active
-      @include mediaMinWidthTabletPort
-        color: $colorWhite
-        &:before
-          opacity: 1
-          visibility: visible
-        .departments__header
-          h1,
-          h2,
-          h3,
-          h4
-            color: $colorWhite
-        .departments__media
-          opacity: 1
-          visibility: visible
-    &:nth-child(2)
-      @include mediaMaxWidthTabletPort
-        color: $colorWhite
-        &:before
-          opacity: 1
-          visibility: visible
-        .departments__header
-          h1,
-          h2,
-          h3,
-          h4
-            color: $colorWhite
-        .departments__media
-          opacity: 1
-          visibility: visible
+      color: $colorWhite
+      &:before
+        opacity: 1
+        visibility: visible
+      .departments__header
+        h1,
+        h2,
+        h3,
+        h4
+          color: $colorWhite
+      .departments__media
+        opacity: 1
+        visibility: visible
+
   .departments__media,
   .departments__header,
   .departments__main
     position: relative
     z-index: 2
   .departments__media
+    min-width: 2rem
     display: flex
     align-items: center
     @include mediaMinWidthTabletPort
