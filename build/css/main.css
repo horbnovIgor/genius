@@ -386,6 +386,9 @@ ol li {
 .layout__section .section__subtitle h6 {
   color: #6C6C78;
 }
+.layout__section .section__main {
+  width: 100%;
+}
 
 .formular__form {
   display: grid;
@@ -2314,6 +2317,7 @@ textarea::placeholder {
 .layout__news .news__link {
   border-radius: 1.5rem;
   padding: 1.5rem;
+  height: 100%;
   background-color: #F7F8FA;
   display: grid;
   grid-template-columns: 1fr;
@@ -2337,7 +2341,6 @@ textarea::placeholder {
   overflow: hidden;
 }
 .layout__news .news__header {
-  min-height: 5rem;
   grid-column: span 3;
   -webkit-line-clamp: 3;
   -webkit-transition: all 0.4s ease-in-out;
