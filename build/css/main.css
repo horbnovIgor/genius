@@ -282,6 +282,9 @@ ol li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 1.5rem 0;
   position: relative;
 }
@@ -299,6 +302,9 @@ ol li {
   .layout__section.layout__section_secondary {
     padding: 4.5rem 0;
   }
+}
+.layout__section .section__header {
+  width: 100%;
 }
 .layout__section .section__header.section__header_secondary {
   display: grid;
@@ -342,15 +348,15 @@ ol li {
   }
 }
 .layout__section .section__title {
-  display: grid;
-  grid-template-columns: 0.3125rem auto 0.3125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  grid-gap: 0.25rem;
 }
 .layout__section .title__ico {
   width: 0.3125rem;
@@ -360,6 +366,7 @@ ol li {
 }
 .layout__section .title__text {
   font-size: 1rem;
+  padding: 0 0.25rem;
 }
 @media screen and (min-width: 580px) {
   .layout__section .title__text {
@@ -1777,7 +1784,7 @@ textarea::placeholder {
   position: absolute;
   width: 100%;
   max-width: calc(100% - 1.5rem);
-  bottom: 0.75rem;
+  bottom: 3.75rem;
   right: 0.75rem;
   padding: 0.75rem;
   border-radius: 0.875rem;
@@ -2015,10 +2022,14 @@ textarea::placeholder {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  visibility: hidden;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+}
+@media screen and (min-width: 580px) {
+  .layout__cases .cases__video {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 .layout__cases .cases__main {
   display: -webkit-box;
@@ -2132,22 +2143,43 @@ textarea::placeholder {
     background-image: url(../img/content/departments/departments__img01.png);
   }
 }
-.layout__departments .departments__item.departments__item_active {
-  color: #ffffff;
-}
-.layout__departments .departments__item.departments__item_active:before {
-  opacity: 1;
-  visibility: visible;
-}
-.layout__departments .departments__item.departments__item_active .departments__header h1,
+@media screen and (min-width: 769px) {
+  .layout__departments .departments__item.departments__item_active {
+    color: #ffffff;
+  }
+  .layout__departments .departments__item.departments__item_active:before {
+    opacity: 1;
+    visibility: visible;
+  }
+  .layout__departments .departments__item.departments__item_active .departments__header h1,
 .layout__departments .departments__item.departments__item_active .departments__header h2,
 .layout__departments .departments__item.departments__item_active .departments__header h3,
 .layout__departments .departments__item.departments__item_active .departments__header h4 {
-  color: #ffffff;
+    color: #ffffff;
+  }
+  .layout__departments .departments__item.departments__item_active .departments__media {
+    opacity: 1;
+    visibility: visible;
+  }
 }
-.layout__departments .departments__item.departments__item_active .departments__media {
-  opacity: 1;
-  visibility: visible;
+@media screen and (max-width: 768px) {
+  .layout__departments .departments__item:nth-child(2) {
+    color: #ffffff;
+  }
+  .layout__departments .departments__item:nth-child(2):before {
+    opacity: 1;
+    visibility: visible;
+  }
+  .layout__departments .departments__item:nth-child(2) .departments__header h1,
+.layout__departments .departments__item:nth-child(2) .departments__header h2,
+.layout__departments .departments__item:nth-child(2) .departments__header h3,
+.layout__departments .departments__item:nth-child(2) .departments__header h4 {
+    color: #ffffff;
+  }
+  .layout__departments .departments__item:nth-child(2) .departments__media {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .layout__departments .departments__media,
 .layout__departments .departments__header,
@@ -2466,7 +2498,7 @@ textarea::placeholder {
 .layout__services .services__list {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;

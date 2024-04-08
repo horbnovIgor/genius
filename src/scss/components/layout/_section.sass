@@ -2,6 +2,7 @@
   padding: 2rem 0
   display: flex
   flex-direction: column
+  align-items: flex-start
   gap: 1.5rem 0
   position: relative
   @include mediaMinWidthTabletPort
@@ -12,6 +13,7 @@
     @include mediaMinWidthMobile
       padding: 4.5rem 0
   .section__header
+    width: 100%
     &.section__header_secondary
       display: grid
       grid-template-columns: 1fr
@@ -40,17 +42,16 @@
 
 
   .section__title
-    display: grid
-    grid-template-columns: .3125rem auto .3125rem
+    display: flex
     align-items: center
     justify-content: center
-    grid-gap: .25rem
   .title__ico
     width: .3125rem
     height: 1rem
     transform: translateY(1px)
   .title__text
     font-size: 1rem
+    padding: 0 .25rem 
     @include mediaMinWidthMobile
       font-size: 1.125rem
     @include mediaMinWidthTabletPort
